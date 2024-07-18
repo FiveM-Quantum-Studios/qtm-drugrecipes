@@ -6,10 +6,10 @@ AddEventHandler('onClientResourceStart', function(resourceName)
         local optionai = {
             {
                 name = 'payphones',
-                icon = 'fa-solid fa-key',
-                label = 'Interact',
+                icon = Config.Icons.targetIcon,
+                label = Config.Language.targetLabel,
                 onSelect = function()
-                    TriggerEvent('tiz-drugrecipes:client:showMenu')
+                    TriggerEvent('qtm-drugrecipes:client:showMenu')
                 end
             }
         }
@@ -19,8 +19,8 @@ AddEventHandler('onClientResourceStart', function(resourceName)
     end
 end)
 function handleInput()
-    local input = lib.inputDialog('Dialog title', {
-        {type = 'number', label = 'Recipe Code', description = 'Input the code of your recipe', required = true, icon = 'hashtag'},
+    local input = lib.inputDialog(Config.Language.diaglogTitle, {
+        {type = 'number', label = Config.Language.recipeCode, description = Config.Language.recipeCodeDesc, required = true, icon = Config.Icons.inputIcon},
     })
 
     if not input then return end
@@ -29,18 +29,18 @@ function handleInput()
         return Config.Codes[recipeCode]
     else
         return lib.notify({
-            title = 'Recipe',
-            description = 'Wrong Code',
+            title = Config.Language.notifyTitle,
+            description = Config.Language.wrongCode,
             type = 'error'
         })
     end
 end
-RegisterNetEvent('tiz-drugrecipes:client:showMenu')
-AddEventHandler('tiz-drugrecipes:client:showMenu', function()
+RegisterNetEvent('qtm-drugrecipes:client:showMenu')
+AddEventHandler('qtm-drugrecipes:client:showMenu', function()
     local matchedRecipe = handleInput()
     if matchedRecipe then
         lib.alertDialog({
-            header = 'Recipe',
+            header = Config.Language.notifyTitle,
             content = matchedRecipe,
             centered = true,
             cancel = true
