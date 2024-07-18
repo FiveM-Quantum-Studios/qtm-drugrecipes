@@ -13,8 +13,8 @@ AddEventHandler('onClientResourceStart', function(resourceName)
                 end
             }
         }
-        for i = 1, #Config.Payphones do 
-            ox_target:addModel(Config.Payphones[i], optionai)
+        for i, phoneModel in pairs(Config.PayPhones) do
+            ox_target:addModel(phoneModel, optionai)
         end
     end
 end)
