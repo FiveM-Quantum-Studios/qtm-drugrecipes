@@ -12,7 +12,7 @@ Config.PayPhones = {
 }
 ----------------------------------------------------------------
 Config.Codes = {
-    [12314] = 'You need 2x meth 2x water 3x meow meow'
+    [12314] = 'Slowly mix the following ingredients:\n 2x Meow Meows \n 3x Bones \n 4x Woof Woofs'
 }
 
 Config.Language = {

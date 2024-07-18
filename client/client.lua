@@ -18,11 +18,10 @@ AddEventHandler('onClientResourceStart', function(resourceName)
         end
     end
 end)
-function handleInput()
+function HandleInput()
     local input = lib.inputDialog(Config.Language.diaglogTitle, {
         {type = 'number', label = Config.Language.recipeCode, description = Config.Language.recipeCodeDesc, required = true, icon = Config.Icons.inputIcon},
     })
-
     if not input then return end
     local recipeCode = input[1]
     if Config.Codes[recipeCode] then
@@ -37,7 +36,7 @@ function handleInput()
 end
 RegisterNetEvent('qtm-drugrecipes:client:showMenu')
 AddEventHandler('qtm-drugrecipes:client:showMenu', function()
-    local matchedRecipe = handleInput()
+    local matchedRecipe = HandleInput()
     if matchedRecipe then
         lib.alertDialog({
             header = Config.Language.notifyTitle,
