@@ -4,7 +4,7 @@
 * ox_lib - https://github.com/overextended/ox_lib
 
 ## Support & Updates
-* [Discord]()
+* [Discord]() - Soon
 
 ##  Preview
 * [Preview]()
