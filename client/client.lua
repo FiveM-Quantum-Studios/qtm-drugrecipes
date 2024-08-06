@@ -1,4 +1,6 @@
+qtm = exports['qtm-lib']:getSharedObject()
 local ox_target = exports.ox_target
+
 AddEventHandler('onClientResourceStart', function(resourceName)
     if(GetCurrentResourceName() ~= resourceName) then
         return
@@ -27,11 +29,12 @@ function HandleInput()
     if Config.Codes[recipeCode] then
         return Config.Codes[recipeCode]
     else
-        return lib.notify({
-            title = Config.Language.notifyTitle,
-            description = Config.Language.wrongCode,
-            type = 'error'
-        })
+        --return lib.notify({
+        --    title = Config.Language.notifyTitle,
+        --    description = Config.Language.wrongCode,
+        --    type = 'error'
+        --})
+        return qtm.Notification(nil,Config.Language.notifyTitle, 'error', Config.Language.wrongCode)
     end
 end
 RegisterNetEvent('qtm-drugrecipes:client:showMenu')

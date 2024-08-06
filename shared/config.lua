@@ -12,15 +12,22 @@ Config.PayPhones = {
 }
 ----------------------------------------------------------------
 Config.Codes = {
-    [12314] = 'Slowly mix the following ingredients:\n' ..
-               '2x Meow Meows\n' ..
-               '3x Bones\n' ..
-               '4x Woof Woofs',
-
-    [151] = 'Slowly mix the following ingredients:\n' ..
-               '2x Meow Meows\n' ..
-               '3x Bones\n' ..
-               '4x Woof Woofs'
+    [420] = 'Here is the recipe:' ..
+    '                                           \n'..
+    '                                           \n'..'1x  Milk'..
+    '                                           \n'..'3x  Sugar'..
+    '                                           \n'..'5x  Meow Meow'..
+    '                                           \n'..'6x  Love'..
+    '                                           \n'..
+    '                                           \n'.. "This will create a: Milkshake",
+    [6969] = 'Here is the recipe:' ..
+    '                                           \n'..
+    '                                           \n'..'1x  Milk'..
+    '                                           \n'..'3x  Sugar'..
+    '                                           \n'..'5x  Meow Meow'..
+    '                                           \n'..'6x  Love'..
+    '                                           \n'..
+    '                                           \n'.. "This will create a: Milkshake",
 }
 Config.Language = {
     targetLabel = 'Interact',
@@ -33,5 +40,5 @@ Config.Language = {
 
 Config.Icons = {
     inputIcon = 'hashtag',
-    targetIcon = 'fa-solid fa-key'
+    targetIcon = 'fa-solid fa-phone'
 }
