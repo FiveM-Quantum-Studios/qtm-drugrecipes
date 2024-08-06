@@ -29,12 +29,7 @@ function HandleInput()
     if Config.Codes[recipeCode] then
         return Config.Codes[recipeCode]
     else
-        --return lib.notify({
-        --    title = Config.Language.notifyTitle,
-        --    description = Config.Language.wrongCode,
-        --    type = 'error'
-        --})
-        return qtm.Notification(nil,Config.Language.notifyTitle, 'error', Config.Language.wrongCode)
+        return qtm.Notification(nil, Config.Language.notifyTitle, 'error', Config.Language.wrongCode)
     end
 end
 RegisterNetEvent('qtm-drugrecipes:client:showMenu')
