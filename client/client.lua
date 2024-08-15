@@ -1,4 +1,3 @@
-qtm = exports['qtm-lib']:getSharedObject()
 local ox_target = exports.ox_target
 
 AddEventHandler('onClientResourceStart', function(resourceName)

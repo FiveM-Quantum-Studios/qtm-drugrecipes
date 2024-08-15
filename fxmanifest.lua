@@ -18,6 +18,7 @@ server_script {
 }
 
 shared_scripts {
+    '@qtm-lib/imports.lua',
     '@ox_lib/init.lua',
     'shared/**.lua',
 }
