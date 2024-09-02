@@ -24,6 +24,6 @@ shared_scripts {
 }
 
 dependencies {
-	'ox_lib',
-	'qtm-lib'
+	'qtm-lib',
+    'ox_lib'
 }
