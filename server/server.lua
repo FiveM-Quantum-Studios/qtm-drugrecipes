@@ -1,3 +1,3 @@
 if Config.CheckForUpdates then
-    lib.versionCheck('FiveM-Quantum-Studios/qtm-drugrecipes')
+    qtm.Server.VersionChecker('qtm-drugrecipes')
 end
