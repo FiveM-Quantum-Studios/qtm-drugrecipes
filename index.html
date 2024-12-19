@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum TTS</title>
+</head>
+<body>
+    <script>
+        window.addEventListener("message", (event) => {
+            if (event.data.action === "playTTS") {
+                const utterance = new SpeechSynthesisUtterance(event.data.text);
+                utterance.lang = "en-US";
+
+                utterance.onend = () => {
+                    fetch("https://qtm-drugrecipes/ttsFinished", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({ action: "ttsFinished" })
+                    });
+                };
+
+                speechSynthesis.speak(utterance);
+            }
+        });
+    </script>
+</body>
+</html>

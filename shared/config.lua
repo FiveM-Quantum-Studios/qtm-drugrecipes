@@ -11,24 +11,33 @@ Config.PayPhones = {
     'prop_phonebox_01b'
 }
 ----------------------------------------------------------------
+local function formatRecipe(lines)
+    local spacer = '\n               '-- Add or delete spaces to format the text how you want it.
+    return spacer .. table.concat(lines, spacer) .. spacer
+end
+----------------------------------------------------------------
 Config.Codes = {
-    [420] = 'Here is the recipe:' ..
-    '                                           \n'..
-    '                                           \n'..'1x  Milk'..
-    '                                           \n'..'3x  Sugar'..
-    '                                           \n'..'5x  Meow Meow'..
-    '                                           \n'..'6x  Love'..
-    '                                           \n'..
-    '                                           \n'.. "This will create a: Milkshake",
-    [6969] = 'Here is the recipe:' ..
-    '                                           \n'..
-    '                                           \n'..'1x  Milk'..
-    '                                           \n'..'3x  Sugar'..
-    '                                           \n'..'5x  Meow Meow'..
-    '                                           \n'..'6x  Love'..
-    '                                           \n'..
-    '                                           \n'.. "This will create a: Milkshake",
+    [420] = {
+        recipe = formatRecipe({
+            "Here is the recipe:",
+            "",
+            "1x  Milk",
+            "3x  Sugar",
+            "5x  Meow Meow",
+            "6x  Love",
+            "",
+            "This will create a: Milkshake"
+        }),
+        displayMode = "text" -- Options: "text", "speech", "both"
+    },
+    [6969] = {
+        recipe = formatRecipe({
+            "Hey big dawg, I heard you want to know the recipe to the good stuff. Well the recipe is love and affection baby boy. Love you bye",
+        }),
+        displayMode = "speech" -- Options: "text", "speech", "both"
+    }
 }
+
 Config.Language = {
     targetLabel = 'Interact',
     recipeCode = 'Recipe Code',
